@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PlantPlaces14SS</string>
+    <string name="lblGPSAPlant">GPS a Plant</string>
+    <string name="Search">Search</string>
+    <string name="lblDescription">description of the plant</string>
+
+</resources>
