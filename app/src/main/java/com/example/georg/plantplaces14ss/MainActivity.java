@@ -9,7 +9,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText description;
 
-
+        //text hinzugefögt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
