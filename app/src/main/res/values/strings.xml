@@ -3,5 +3,8 @@
     <string name="lblGPSAPlant">GPS a Plant</string>
     <string name="Search">Search</string>
     <string name="lblDescription">description of the plant</string>
+    <string name="lblSelectAPlant">Select a Plant</string>
+    <string name="lblLatitude">Latitutde</string>
+    <string name="blank"></string>
 
 </resources>

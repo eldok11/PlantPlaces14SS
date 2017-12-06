@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.georg.plantplaces14ss.MainActivity">
+    tools:context="com.example.georg.plantplaces14ss.GPSAPlantActivity">
 
 
 
@@ -44,7 +44,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editText"
         android:onClick="searchClick"
-        android:text="@string/Search"
+        android:text="@string/lblSelectAPlant"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="62dp" />
 
@@ -56,6 +56,44 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
         android:text="@string/lblDescription"/>
+
+    <TextView
+        android:id="@+id/txtLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_below="@+id/search"
+        android:text="@string/lblLatitude" />
+
+    <TextView
+        android:id="@+id/lblLatitudeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_toEndOf="@+id/txtLatitude"
+        android:layout_toRightOf="@+id/txtLatitude"
+        android:text="@string/blank" />
+
+    <TextView
+        android:id="@+id/lblLongtitudeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtLatitude"
+        android:layout_alignStart="@+id/txtLatitude"
+        android:layout_below="@+id/txtLatitude"
+        android:layout_marginTop="17dp"
+        android:text="Longtitude" />
+
+    <TextView
+        android:id="@+id/lblLongtitudeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblLatitudeValue"
+        android:layout_alignStart="@+id/lblLatitudeValue"
+        android:layout_alignTop="@+id/lblLongtitudeLabel" />
 </RelativeLayout>
 
 
