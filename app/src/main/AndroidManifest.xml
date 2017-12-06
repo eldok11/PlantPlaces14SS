@@ -20,6 +20,9 @@
         <activity android:name=".AdavancedSearchActivity">
 
         </activity>
+        <activity android:name=".PlantResultsActivity">
+
+        </activity>
     </application>
 
 </manifest>
