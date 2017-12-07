@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class GPSAPlantActivity extends AppCompatActivity {
     EditText description;
+    TextView txtSelectedPlant;
+    private Plant plant;
 
         //text hinzugefögt
     @Override
@@ -18,6 +21,7 @@ public class GPSAPlantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gps_plants);
 
        description= findViewById(R.id.editText);
+       txtSelectedPlant =findViewById(R.id.txtSelectedPlant);
     }
 
 
@@ -32,8 +36,19 @@ public class GPSAPlantActivity extends AppCompatActivity {
         //neue aktivität oder fensterlayout öffnen
         Intent searchIntent =new Intent(this,AdavancedSearchActivity.class);
         // aktivität starten nicht verwessen im manifest
-        startActivity(searchIntent);
+        startActivityForResult(searchIntent,AdavancedSearchActivity.PLANT_RESULTS);
+
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+   if(requestCode==AdavancedSearchActivity.PLANT_RESULTS){
+       plant=(Plant)data.getSerializableExtra(PlantResultsActivity.PLANT_RESULT);
+
+       txtSelectedPlant.setText(plant.toString());
+   }
+    }
 
 }

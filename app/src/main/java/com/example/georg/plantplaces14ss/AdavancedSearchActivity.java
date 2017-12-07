@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 /**
  * Created by Georg on 06.12.2017.
@@ -15,7 +16,8 @@ import android.widget.AutoCompleteTextView;
 public class AdavancedSearchActivity extends AppCompatActivity {
 
     private AutoCompleteTextView actPlantName;
-
+    public static final String SEARCH_PLANT_NAME= "SEARCH_PLANT_NAME";
+    public static final int PLANT_RESULTS=1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,28 @@ public class AdavancedSearchActivity extends AppCompatActivity {
         String searchPlantName = actPlantName.getText().toString();
 
         //daten an nächste aktivity geben
-        plantResultsIntent.putExtra("SEARCH_PLANT_NAME",searchPlantName);
+        plantResultsIntent.putExtra(SEARCH_PLANT_NAME,searchPlantName);
 
-        startActivity(plantResultsIntent);
+        //anstatt staractivity, staractivityforresult erwartet einen rückgabewert
+        startActivityForResult(plantResultsIntent,PLANT_RESULTS);
 
         }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+
+        //wenn plantresultsactivity finish(),
+        if(requestCode==PLANT_RESULTS){
+            Plant plant=(Plant) data.getSerializableExtra(PlantResultsActivity.PLANT_RESULT);
+           // Toast.makeText(this,"received: "+plant,Toast.LENGTH_LONG).show();
+            getIntent().putExtra(PlantResultsActivity.PLANT_RESULT,plant);
+
+            setResult(RESULT_OK,getIntent());
+
+            finish();
+
+        }
+    }
 }

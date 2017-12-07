@@ -4,7 +4,9 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -14,11 +16,14 @@ import java.util.ArrayList;
 
 public class PlantResultsActivity extends ListActivity {
 
+    private String string;
+    public static final String PLANT_RESULT="PLANT_RESULT";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //bekomme daten von adavancedserachactivity, welches bei edittext eingegeben wurde.
-        String searchTerm = getIntent().getStringExtra("SEARCH_PLANT_NAME");
+        String searchTerm = getIntent().getStringExtra(AdavancedSearchActivity.SEARCH_PLANT_NAME);
 
 
         ArrayList<Plant> allPlants = new ArrayList<Plant>();
@@ -57,5 +62,18 @@ public class PlantResultsActivity extends ListActivity {
         //auch listview objekt möglich, dass dann listView.setAdapter(plantAdapter); benutzt benutzt werden kann
     }
 
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        //item holen, dass der benutzer geklickt hat
+        Plant plant=(Plant)getListAdapter().getItem(position);
 
+        //plan in itent setzten, dass wir zurückschicken werden ana ndere aktivities
+        getIntent().putExtra(PLANT_RESULT, plant);
+        //alles ging gut
+        setResult(RESULT_OK,getIntent());
+        //fenster wird geschlossen
+        finish();
+
+    }
 }

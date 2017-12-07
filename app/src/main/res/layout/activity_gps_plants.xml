@@ -94,6 +94,43 @@
         android:layout_alignLeft="@+id/lblLatitudeValue"
         android:layout_alignStart="@+id/lblLatitudeValue"
         android:layout_alignTop="@+id/lblLongtitudeLabel" />
+
+    <TextView
+        android:id="@+id/lblSelectedPlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblLongtitudeLabel"
+        android:layout_alignStart="@+id/lblLongtitudeLabel"
+        android:layout_below="@+id/lblLongtitudeLabel"
+        android:layout_marginTop="16dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtSelectedPlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lblSelectedPlant"
+        android:layout_toEndOf="@+id/lblLongtitudeValue"
+        android:layout_toRightOf="@+id/lblLongtitudeValue"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/btnCaptureImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/txtSelectedPlant"
+        android:layout_toStartOf="@+id/txtSelectedPlant"
+        android:text="Take Foto" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnCaptureImage"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 </RelativeLayout>
 
 
