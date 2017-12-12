@@ -121,16 +121,18 @@
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/txtSelectedPlant"
         android:layout_toStartOf="@+id/txtSelectedPlant"
-        android:text="Take Foto" />
+        android:text="Take Foto"
+        android:onClick="onTakePhotoClicked"/>
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgPlant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btnCaptureImage"
         app:srcCompat="@drawable/ic_launcher_foreground" />
+
 </RelativeLayout>
 
 
