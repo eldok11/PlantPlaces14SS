@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PlantPlaces14SS.iml" filepath="$PROJECT_DIR$/PlantPlaces14SS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GPSPlant.iml" filepath="$PROJECT_DIR$/GPSPlant.iml" />
+      <module fileurl="file://C:\Users\Georg\AndroidStudioProjects\GPSPlant\PlantPlaces14SS.iml" filepath="C:\Users\Georg\AndroidStudioProjects\GPSPlant\PlantPlaces14SS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
