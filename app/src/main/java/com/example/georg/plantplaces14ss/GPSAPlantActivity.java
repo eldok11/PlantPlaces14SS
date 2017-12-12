@@ -53,6 +53,8 @@ public class GPSAPlantActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+       //nur wenn wir ein gutes resultat bekommen haben
+        if(resultCode==RESULT_OK){
    if(requestCode==AdavancedSearchActivity.PLANT_RESULTS){
        plant=(Plant)data.getSerializableExtra(PlantResultsActivity.PLANT_RESULT);
 
@@ -68,7 +70,7 @@ public class GPSAPlantActivity extends AppCompatActivity {
         imgPlant.setImageBitmap(plantImage);
 
    }
-    }
+    }}
     /**
      * when phpto button is cklicked
      */

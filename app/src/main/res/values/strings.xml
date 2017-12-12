@@ -6,5 +6,6 @@
     <string name="lblSelectAPlant">Select a Plant</string>
     <string name="lblLatitude">Latitutde</string>
     <string name="blank"></string>
+    <string name="alarmMessage">unableto opne Image</string>
 
 </resources>
